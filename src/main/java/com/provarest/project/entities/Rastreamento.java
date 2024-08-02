@@ -20,12 +20,10 @@ public class Rastreamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date dataHora;
-    private String status;
+    private Status status;
 
 
-    public String getResumo (){
-        return "informações";
-    }
+
 
 
 }

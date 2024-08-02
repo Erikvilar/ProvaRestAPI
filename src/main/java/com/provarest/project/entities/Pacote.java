@@ -22,9 +22,7 @@ public class Pacote {
     @OneToMany(mappedBy = "Pacote")
     private Rastreamento rastreamento;
 
-    public void atualizaStatus(){
-        rastreamento  = new Rastreamento();
-    }
+    
 
  
      
