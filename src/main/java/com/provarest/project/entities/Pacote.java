@@ -1,6 +1,8 @@
 package com.provarest.project.entities;
 
 
+import java.util.Collection;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,8 +21,8 @@ public class Pacote {
     private Long id_pacote;
     private String id;
     private String destinatario;
-    @OneToMany(mappedBy = "Pacote")
-    private Rastreamento rastreamento;
+    @OneToMany
+    private Collection<Rastreamento> rastreamento;
 
     
 

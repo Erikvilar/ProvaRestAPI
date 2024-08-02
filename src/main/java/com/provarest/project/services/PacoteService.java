@@ -2,6 +2,9 @@ package com.provarest.project.services;
 
 
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +19,31 @@ public class PacoteService implements interfacePacote {
 
 @Override
 public void atualizaStatus(Pacote pacote) {
-    try{
-        pRepo.update(pacote);
-    }catch(Exception ex){
-        
-    }
+pRepo.save(pacote);
+}
+
+@Override
+public List<Pacote> getPacotes() {
+ return pRepo.findAll();
+}
+
+@Override
+public Optional<Pacote> getById(Long id) {
+    return pRepo.findById(id);
+}
+
+@Override
+public void deletePacote(Long id) {
+
+}
+
+@Override
+public void updateById(Long id, Pacote pacote) {
+       Long idPacote = pacote.getId_pacote();
+       pacote.setId_pacote(idPacote);
+        pRepo.save(pacote);
+}
+
 
 }
 
@@ -31,4 +54,4 @@ public void atualizaStatus(Pacote pacote) {
 
  
     
-}
+

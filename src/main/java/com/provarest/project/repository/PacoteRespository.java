@@ -1,5 +1,6 @@
 package com.provarest.project.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
@@ -11,9 +12,10 @@ import com.provarest.project.entities.Pacote;
 public interface PacoteRespository extends CrudRepository<Pacote, Long> {
 
 
-    void update (Pacote pacote);
+    List<Pacote> findAll();
     Optional <Pacote> findById(Long id);
-    void deledeleteById(Long id);
+    void deleteById(Long id);
     Pacote save (Pacote pacote);
+   
 
 }
